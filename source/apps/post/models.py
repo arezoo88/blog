@@ -10,6 +10,15 @@ class Post(models.Model):
     content = models.TextField(
         _('Content')
     )
+    created_on = models.DateTimeField(
+        _('created on'),
+        auto_now_add=True
+    )
+
+    class Meta:
+        ordering = ['-created_on']
+        verbose_name = _('post')
+        verbose_name_plural = _('posts')
 
     def __str__(self):
         return self.title
