@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third Parties
+    "rest_framework",
+    'rest_framework.authtoken',
+    # Locals
+    'apps.post',
+
+
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'base.urls'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
